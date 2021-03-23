@@ -11,6 +11,36 @@
     <h1>Hello from HTML!</h1>
     <div id="app">
       {{ message }}
+      <button v-on:click="index">Click to load Products Index</button>
+      <div v-if="toggleIndex" v-for="product in products" :key="index">
+        <p>{{product.id}}. {{product.name}} {{product.description}}</p>
+      </div>
+      <hr />
+      <input type="text" v-model="input" />
+      <button v-on:click="show">Submit</button>
+      <div>{{singleProduct.id}} {{singleProduct.name}} {{singleProduct.description}} {{singleProduct.price}}</div>
+    </div>
+    <hr />
+    <div>
+      <form>
+        <p>
+          Name:
+          <input v-model="name" placeholder="Enter name" />
+        </p>
+        <p>
+          Description:
+          <input v-model="description" placeholder="Enter description" />
+        </p>
+        <p>
+          Price:
+          <input v-model="price" placeholder="Enter price" />
+        </p>
+        <p>
+          Image Url:
+          <input v-model="image_url" placeholder="Add Image" />
+        </p>
+        <button>Submit</button>
+      </form>
     </div>
   </body>
 </html>
